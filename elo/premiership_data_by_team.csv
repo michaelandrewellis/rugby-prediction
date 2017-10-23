@@ -1,4 +1,4 @@
-,match_id,Time,Venue,Season,team,opp,team_score,opp_score,is_copy,location,result,Date
+,match_id,Time,Venue,Season,team,opp,team_score,opp_score,is_copy,location,result,date
 0,0,14:15,Madejski Stadium,1998-1999,Richmond,Newcastle Falcons,41,29,0,H,1.0,1998-09-05
 1,1,15:00,Recreation Ground,1998-1999,Bath Rugby,Wasps,36,27,0,H,1.0,1998-09-05
 2,2,15:00,Kingsholm,1998-1999,Gloucester,London Irish,29,22,0,H,1.0,1998-09-05

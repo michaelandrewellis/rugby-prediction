@@ -2,16 +2,18 @@ import pandas as pd
 from math import pow
 import scipy.stats as stats
 import dateparser
+import os
+import sys
 
 csv_file = 'premiership_data_by_team.csv'
 output_file = 'elo.csv'
 starting_elo = 1400
-promotion_elo = 1400 # 1300
-k=5 #25
-number_of_iterations = 5 #10
-home_bonus = 30 #115
+promotion_elo = 1300 
+k=25
+number_of_iterations = 10
+home_bonus = 115
 
-df=pd.DataFrame.from_csv(csv_file)
+df=pd.DataFrame.from_csv(os.path.join(sys.path[0],csv_file))
 df.reset_index().drop('index',axis=1).reset_index(inplace=True)
 df.rename(index=str,columns={'index':'order'},inplace=True)
 teams = set(df['team'].unique())
@@ -99,13 +101,10 @@ def evaluate_model(df):
     mean_sse = sse/count
     print(sse,mean_sse)
         
-        
-        
-
 elo_model(df)
 evaluate_model(df)
 df_copy = df.copy()
 df_copy.rename(columns={"team_score":"opp_score","opp_score":"team_score","opp_elo_i": "team_elo_i", "opp_elo_n": "team_elo_n","team_elo_i": "opp_elo_i","team_elo_n": "opp_elo_n","team":"opp","opp":"team"})
 df_copy['is_copy'] = 1
 df = pd.concat([df,df_copy])
-df.to_csv(output_file)
+df.to_csv(os.path.join(sys.path[0],output_file))

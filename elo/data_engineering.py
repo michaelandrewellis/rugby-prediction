@@ -2,8 +2,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 import dateparser
+import os
+import sys
 
-df = pd.DataFrame.from_csv('premiership_data.csv')
+input_file = 'premiership_data.csv'
+output_file = 'premiership_data_by_team.csv'
+
+df = pd.DataFrame.from_csv(os.path.join(sys.path[0],input_file))
 df['Home Score'] = df['Score'].apply(lambda x: int(x.split('-')[0]))
 df['Away Score'] = df['Score'].apply(lambda x: int(x.split('-')[1]))
 df.drop('Score',axis=1,inplace=True)
@@ -60,5 +65,4 @@ df['Date'] = df['Date'].apply(lambda x: dateparser.parse(x))
 df.drop(['Data','Home','Away','Home Score','Away Score'],axis=1,inplace=True)
 
 
-    
-df.to_csv('premiership_data_by_team.csv')
+df.to_csv(os.path.join(sys.path[0],output_file))
