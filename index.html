@@ -3,10 +3,10 @@
 <script src="https://d3fc.io/lib/d3fc.min.js"></script>
 </head>
 <body>
-	Test
+	<div class="elo-box">
 <script>
-var w = document.getElementsByClassName("wpd3-2-0")[0].parentElement.offsetWidth
-var svg = d3.select(".wpd3-2-0").append("svg").attr("width", w).attr("height", w/2).attr('id','chart'),
+var w = document.getElementsByClassName("elo-box")[0].parentElement.offsetWidth
+var svg = d3.select(".elo-box").append("svg").attr("width", w).attr("height", w/2).attr('id','chart'),
     margin = {top: 20, right: 10, bottom: 30, left: 40}, //{top: 20, right: 100, bottom: 30, left: 50}
     width = svg.attr("width") - margin.left - margin.right,
     height = svg.attr("height") - margin.top - margin.bottom,
@@ -115,7 +115,7 @@ x.domain(d3.extent(data, function(d) { return d.date; }));
   //SELECTION BOX
 
 var selectValue = "Bath Rugby";
-var select = d3.select('.wpd3-2-0')
+var select = d3.select('.elo-box')
   .append('select')
   	.attr('class','select')
     .on('change',onchange);
@@ -276,5 +276,6 @@ function type(d, _, columns) {
      var x = fc.scaleDiscontinuous(d3.scaleTime()).discontinuityProvider(fc.discontinuityRange.apply(null,disconts))
     .range([0,width]);
 </script>
+	</div>
 </body>
 </html>
