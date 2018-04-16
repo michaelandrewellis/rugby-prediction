@@ -2,10 +2,12 @@
 <head>
 <script src="https://d3fc.io/lib/d3fc.min.js" charset="utf-8"></script>
 	<meta charset="utf-8">
+	 <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
+	
 	<div class="elo-box"></div>
-<script>
+<script type="text/javascript">
 var w = document.getElementsByClassName("elo-box")[0].parentElement.offsetWidth
 var svg = d3.select(".elo-box").append("svg").attr("width", w).attr("height", w/2).attr('id','chart'),
     margin = {top: 20, right: 10, bottom: 30, left: 40}, //{top: 20, right: 100, bottom: 30, left: 50}
