@@ -1,9 +1,9 @@
 <html>
 <head>
-<script src="https://d3fc.io/lib/d3fc.min.js"></script>
+<script src="//d3fc.io/lib/d3fc.min.js"></script>
 </head>
 <body>
-	<div class="elo-box">
+	<div class="elo-box"></div>
 <script>
 var w = document.getElementsByClassName("elo-box")[0].parentElement.offsetWidth
 var svg = d3.select(".elo-box").append("svg").attr("width", w).attr("height", w/2).attr('id','chart'),
@@ -276,6 +276,5 @@ function type(d, _, columns) {
      var x = fc.scaleDiscontinuous(d3.scaleTime()).discontinuityProvider(fc.discontinuityRange.apply(null,disconts))
     .range([0,width]);
 </script>
-	</div>
 </body>
 </html>
