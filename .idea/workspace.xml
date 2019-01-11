@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be5a6f97-4e12-4b6b-bae1-a1b5488a3792" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bayesian_models/bayesian_model_correlated_tries_and_pens.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bayesian_models/bayesian_model_tries_and_pens.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bayesian_models/bayesian_model.py" afterPath="$PROJECT_DIR$/bayesian_models/bayesian_model.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,23 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="scrape_future_matches.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/expected_points/scrape_future_matches.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/expected_points/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3420">
-              <caret line="235" column="24" lean-forward="false" selection-start-line="235" selection-start-column="24" selection-end-line="235" selection-end-column="24" />
+            <state relative-caret-position="150">
+              <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="10" />
               <folding>
                 <element signature="e#24#43#0" expanded="true" />
               </folding>
@@ -44,27 +35,61 @@
       <file leaf-file-name="match_results_updated.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/expected_points/match_results_updated.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11490">
+            <state relative-caret-position="423">
               <caret line="766" column="22" lean-forward="false" selection-start-line="766" selection-start-column="22" selection-end-line="766" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bayesian model.ipynb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bayesian model.ipynb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bayesian_models/bayesian model.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="1" />
+              <selected id="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bayesian_model.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bayesian_models/bayesian_model.py">
+      <file leaf-file-name="bayesian_model_tries_and_pens.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bayesian_models/bayesian_model_tries_and_pens.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="93">
+              <caret line="97" column="22" lean-forward="true" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bayesian_model_correlated_tries_and_pens.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bayesian_models/bayesian_model_correlated_tries_and_pens.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="96" column="23" lean-forward="true" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tries_and_penalties_per_season.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tries_and_penalties_per_season.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="continuous.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda3/envs/rugby_conda/lib/python3.5/site-packages/pymc3/distributions/continuous.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="286" column="8" lean-forward="false" selection-start-line="286" selection-start-column="8" selection-end-line="286" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -73,52 +98,30 @@
       <file leaf-file-name="match_results.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/expected_points/match_results.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10980">
-              <caret line="732" column="21" lean-forward="false" selection-start-line="732" selection-start-column="21" selection-end-line="732" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scraper.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elo/scraper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="12" column="58" lean-forward="false" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="premiership_data_test.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elo/premiership_data_test.csv">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="49" selection-end-line="0" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data_engineering.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elo/data_engineering.py">
+      <file leaf-file-name="match_event_counts.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/expected_points/match_event_counts.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            <state relative-caret-position="-4635">
+              <caret line="0" column="144" lean-forward="false" selection-start-line="0" selection-start-column="144" selection-end-line="0" selection-end-column="144" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bayesian_model.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bayesian_models/bayesian_model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="154" column="51" lean-forward="true" selection-start-line="154" selection-start-column="51" selection-end-line="154" selection-end-column="51" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scrape_and_update.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/expected_points/scrape_and_update.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="7" />
-              <folding>
-                <element signature="e#24#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -136,7 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>drop</find>
       <find>drop_d</find>
       <find>27/10</find>
       <find>simula</find>
@@ -166,6 +168,7 @@
       <find>ratings</find>
       <find>'ratings</find>
       <find>updated</find>
+      <find>conversion</find>
     </findStrings>
     <replaceStrings>
       <replace>opp_elo_i</replace>
@@ -221,8 +224,10 @@
         <option value="$PROJECT_DIR$/expected_points/predict_next_week.py" />
         <option value="$PROJECT_DIR$/expected_points/scrape_and_update.py" />
         <option value="$PROJECT_DIR$/expected_points/model.py" />
-        <option value="$PROJECT_DIR$/bayesian_models/bayesian_model.py" />
         <option value="$PROJECT_DIR$/bayesian_models/bayesian model.ipynb" />
+        <option value="$PROJECT_DIR$/bayesian_models/bayesian_model.py" />
+        <option value="$PROJECT_DIR$/bayesian_models/bayesian_model_tries_and_pens.py" />
+        <option value="$PROJECT_DIR$/bayesian_models/bayesian_model_correlated_tries_and_pens.py" />
       </list>
     </option>
   </component>
@@ -325,7 +330,7 @@
       <recent name="$PROJECT_DIR$/elo" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.model">
+  <component name="RunManager" selected="Python.bayesian_model">
     <configuration default="false" name="model" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -360,23 +365,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="predict_AWC_matches" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/expected_points" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="rugby" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/expected_points/predict_AWC_matches.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="scraper" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -407,6 +395,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="rugby" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/expected_points/predict_next_week.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="bayesian_model" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bayesian_models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="rugby" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bayesian_models/bayesian_model.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -548,17 +553,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.model" />
       <item index="1" class="java.lang.String" itemvalue="Python.scrape_and_update" />
-      <item index="2" class="java.lang.String" itemvalue="Python.predict_AWC_matches" />
-      <item index="3" class="java.lang.String" itemvalue="Python.scraper" />
-      <item index="4" class="java.lang.String" itemvalue="Python.predict_next_week" />
+      <item index="2" class="java.lang.String" itemvalue="Python.scraper" />
+      <item index="3" class="java.lang.String" itemvalue="Python.predict_next_week" />
+      <item index="4" class="java.lang.String" itemvalue="Python.bayesian_model" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.model" />
-        <item index="1" class="java.lang.String" itemvalue="Python.predict_next_week" />
-        <item index="2" class="java.lang.String" itemvalue="Python.scrape_and_update" />
-        <item index="3" class="java.lang.String" itemvalue="Python.scraper" />
-        <item index="4" class="java.lang.String" itemvalue="Python.predict_AWC_matches" />
+        <item index="0" class="java.lang.String" itemvalue="Python.bayesian_model" />
+        <item index="1" class="java.lang.String" itemvalue="Python.model" />
+        <item index="2" class="java.lang.String" itemvalue="Python.predict_next_week" />
+        <item index="3" class="java.lang.String" itemvalue="Python.scrape_and_update" />
+        <item index="4" class="java.lang.String" itemvalue="Python.scraper" />
       </list>
     </recent_temporary>
   </component>
@@ -587,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1547210037152</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Create bayesian model files">
+      <created>1547210057431</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1547210057431</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -601,14 +613,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34061697" sideWeight="0.59325397" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34061697" sideWeight="0.5952381" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34061697" sideWeight="0.40674603" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.40343916" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34061697" sideWeight="0.4047619" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.40145501" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -654,27 +666,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/elo/elo_with_points.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="259" column="137" lean-forward="false" selection-start-line="259" selection-start-column="137" selection-end-line="259" selection-end-column="137" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/expected_points/events_0.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/expected_points/events_5.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14040">
-          <caret line="936" column="89" lean-forward="false" selection-start-line="936" selection-start-column="89" selection-end-line="936" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elo/elo_model_with_points.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
@@ -726,13 +717,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elo/scrape_model_export.py" />
     <entry file="file://$PROJECT_DIR$/elo/html.html" />
-    <entry file="file://$PROJECT_DIR$/expected_points/match_event_counts.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="52" lean-forward="true" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elo/elo.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -830,13 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tries_and_penalties_per_season.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elo/premiership_data_by_team.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -857,7 +834,7 @@
         <state relative-caret-position="45">
           <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -898,26 +875,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/expected_points/match_results.csv">
+    <entry file="file://$USER_HOME$/anaconda3/envs/rugby_conda/lib/python3.5/site-packages/pymc3/distributions/continuous.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10980">
-          <caret line="732" column="21" lean-forward="false" selection-start-line="732" selection-start-column="21" selection-end-line="732" selection-end-column="21" />
+        <state relative-caret-position="161">
+          <caret line="286" column="8" lean-forward="false" selection-start-line="286" selection-start-column="8" selection-end-line="286" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bayesian_models/bayesian model.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tries_and_penalties_per_season.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/expected_points/match_results_updated.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11490">
+        <state relative-caret-position="423">
           <caret line="766" column="22" lean-forward="false" selection-start-line="766" selection-start-column="22" selection-end-line="766" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expected_points/match_event_counts.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4635">
+          <caret line="0" column="144" lean-forward="false" selection-start-line="0" selection-start-column="144" selection-end-line="0" selection-end-column="144" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expected_points/match_results.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="49" selection-end-line="0" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/expected_points/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3420">
-          <caret line="235" column="24" lean-forward="false" selection-start-line="235" selection-start-column="24" selection-end-line="235" selection-end-column="24" />
+        <state relative-caret-position="150">
+          <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="10" />
           <folding>
             <element signature="e#24#43#0" expanded="true" />
           </folding>
@@ -926,16 +934,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bayesian_models/bayesian_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="363">
+          <caret line="154" column="51" lean-forward="true" selection-start-line="154" selection-start-column="51" selection-end-line="154" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bayesian_models/bayesian model.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="1" />
+    <entry file="file://$PROJECT_DIR$/bayesian_models/bayesian_model_tries_and_pens.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="97" column="22" lean-forward="true" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bayesian_models/bayesian_model_correlated_tries_and_pens.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="96" column="23" lean-forward="true" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
