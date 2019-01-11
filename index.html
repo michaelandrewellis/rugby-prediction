@@ -1,0 +1,283 @@
+<html>
+<head>
+<script src="https://d3fc.io/lib/d3fc.min.js" charset="utf-8"></script>
+	<meta charset="utf-8">
+	 <script src="//d3js.org/d3.v4.min.js" charset="utf-8"></script>
+</head>
+<body>
+	
+	<div class="elo-box"></div>
+<script type="text/javascript">
+var w = document.getElementsByClassName("elo-box")[0].parentElement.offsetWidth
+var svg = d3.select(".elo-box").append("svg").attr("width", w).attr("height", w/2).attr('id','chart'),
+    margin = {top: 20, right: 10, bottom: 30, left: 40}, //{top: 20, right: 100, bottom: 30, left: 50}
+    width = svg.attr("width") - margin.left - margin.right,
+    height = svg.attr("height") - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+   
+         
+         var parseTime = d3.timeParse("%Y-%m-%d");
+         
+         var x = d3.scaleTime().range([0, width]),
+            y = d3.scaleLinear().range([height, 0]),
+            z = d3.scaleOrdinal(d3.schemeCategory10);
+
+var line = d3.line()
+.defined(function(d) { return d.elo!==0; })
+.x(function(d) { return x(d.date); })
+.y(function(d) { return y(d.elo); });
+         
+         
+         d3.csv("elo_table_by_week_interpolated_10.csv", type, function(error,data) {
+        if (error) throw error;
+           var teams = data.columns.slice(1).map(function(id) {
+             return {
+               id: id,
+               values: data.map(function(d) {
+                 return {date: d.date,elo: d[id]};
+               })
+             };
+           });
+           console.log(teams);
+           console.log(teams[10].values[0].elo);
+           
+           /*
+           var xScales = [];
+           for (let i=0; i<19; i++){
+            xScales[xScales.length] = xScale(min(seasonArr[i]),max(seasonArr[i]),min(seasonArr[i]).getYear())
+            }
+            
+            function xScale(mindate,maxdate,season) {
+            var seasonStart = new Date();
+            d.setFullYear(season, 0, 1);
+            var seasonEnd = d.setYear(season+1);
+            return d3.scale.linear().domain([mindate,maxdate]).range(seasonStart,seasonEnd);
+            }
+            */
+            
+
+x.domain(d3.extent(data, function(d) { return d.date; }));
+
+  y.domain([
+    d3.min(teams, function(c) { return d3.min(c.values, function(d) { return d.elo || Infinity; }); }),
+    d3.max(teams, function(c) { return d3.max(c.values, function(d) { return d.elo; }); })
+  ]);
+
+  z.domain(teams.map(function(c) { return c.id; }));
+
+  g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x))
+      .append("text")
+      .attr("x", svg.attr('width')-margin.right-margin.left-12)
+      .attr('dy',-3)
+      .attr("fill", "#000")
+      .text("Year");
+
+  g.append("g")
+      .attr("class", "axis axis--y")
+      .call(d3.axisLeft(y))
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "0.71em")
+      .attr("fill", "#000")
+      .text("Elo");
+
+  var team = g.selectAll(".team")
+    .data(teams)
+    .enter().append("g")
+      .attr("class", "team");
+      
+  team.append("path")
+      .attr("class", "line")
+      .attr("d", function(d) { return line(d.values); })
+      .attr("id", function(d) { return d.id.replace(/\s+/g, '');})
+      .attr("fill", 'none')
+      .attr('opacity', 0.3)
+      .attr('stroke-width',1.5)
+      .style("stroke", function(d) { return z(d.id); })
+      .on("click", function(d,i) {console.log(d);
+          selectValue = d.id;
+          onchange();
+      })
+      //.on("mouseover", handleMouseOver)
+      //.on("mouseout", handleMouseOut);
+     
+ 
+  /*
+  team.append("text")
+      .datum(function(d) { return {id: d.id, value: d.values[d.values.length - 1]}; })
+      .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.elo) + ")"; })
+      .attr("x", 3)
+      .attr("dy", "0.35em")
+      .style("font", "10px sans-serif")
+      .text(function(d) { return d.id; });
+      */
+  //SELECTION BOX
+
+var selectValue = "Bath Rugby";
+var select = d3.select('.elo-box')
+  .append('select')
+  	.attr('class','select')
+    .on('change',onchange);
+
+var title = d3.select('svg').append('text').text(selectValue).attr('fill',z(selectValue)).attr('x',w/2+20).attr('y',w/32)
+.attr('font-size',(w/40).toString()+'pt').attr('text-anchor','middle').attr('font-weight','bold')
+
+var options = select
+  .selectAll('option')
+	.data(teams).enter()
+	.append('option')
+		.text(function (d) { return d.id; });
+		
+// Colour initial selected line
+
+d3.select('path#'+selectValue.replace(/\s+/g, '')).style("opacity", 1).style("stroke-width", 2.5);
+
+function onchange() {
+	try {
+	d3.select('#teamnamebox').remove()
+	d3.select('path#'+selectValue.replace(/\s+/g, '')).style("opacity", 0.3).style("stroke-width", 1.5)
+	}
+	catch(err) {}
+	selectValue = d3.select('select').property('value')
+	d3.select('path#'+selectValue.replace(/\s+/g, '')).style("opacity", 1).style("stroke-width", 3)
+	//d3.select('body').append('p').text(selectValue + ' is the last selected option.').attr('id','teamnamebox')
+	title.text(selectValue).attr('fill',z(selectValue))
+}
+
+ // Add tooltips
+  
+ var focus = svg.append("g")
+        .attr("class", "focus")
+        .style("display", "none");
+      
+      
+     // Add dotted date line   
+    focus.append("line")
+.attr("x1", 0)  //<<== change your code here
+.attr("y1", 0)
+.attr("x2", 0)  //<<== and here
+.attr("y2", 0)
+.style("stroke-width", 1)
+.style("stroke-dasharray", ("3, 3"))
+.style("stroke", "black")
+.style("fill", "none");
+    
+    focus.append("circle")
+        .attr("r", 5)
+        .attr('stroke-width',1)
+        .attr('stroke','white');
+    
+    focus.append("rect").attr("x",-50).attr("y",-65).attr("width",175).attr("height",30).attr('fill','white').attr('opacity',0.8)
+    .attr('stroke','black')
+    .attr('rx',5)
+    .attr('ry',5).attr('stroke-width',3)
+    
+    focus.append("text")
+        .attr("x", -40)
+        //.attr("dy", ".35em")
+        .attr("dy",-45);
+        
+    
+        
+    /*focus.append("svg")
+            .attr("width", 800)
+            .attr("height", 800).attr('color','black');*/
+    
+     // overlay - here so that it goes behind
+   
+       /*svg.append("rect")
+        .attr("class", "overlay")
+        .attr("width", width)
+        .attr("height", height)*/
+        
+        d3.select('svg')
+        .on("mouseover", function() { focus.style("display", null); })
+        .on("mouseout", function() { focus.style("display", "none"); })
+        .on("mousemove", mousemove);
+    
+    var bisectDate = d3.bisector(function(d) { return d.date; }).left;
+    
+    function mousemove() {
+        var x0 = x.invert(d3.mouse(this)[0]-margin.left);
+        var team = teams.filter(function(obj) { 
+        return obj.id == selectValue;
+        });
+        var i = bisectDate(team[0].values, x0, 1);
+        var d0 = team[0].values[i - 1],
+        d1 = team[0].values[i],
+        d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+        var xText = margin.left + x(d.date),
+        yText = margin.top+y(d.elo)
+        focus.attr("transform", "translate("  + xText + "," + yText + ")");
+        focus.attr("fill",z(team[0].id));
+        //focus.select("text").text(d.date.toDateString() + Math.round(d.elo)).attr("fill",'black');
+        var options = {year: 'numeric', month: 'short', day: 'numeric' };
+        focus.select("text").text(d.date.toLocaleDateString('en-GB', options) +' ' + Math.round(d.elo)).attr("fill",'black');
+        focus.select("text").text(Math.round(d.elo) + ' - ' + d.date.toLocaleDateString('en-GB', options)).attr("fill",'black').attr('font-family','sans-serif')
+        .attr('transform','translate('+ d3.max([d3.min([w-xText-130,0]),50-xText])+','+d3.max([80-yText,0])+')');//.attr("stroke","white").attr("stroke-width","1px");
+    
+        focus.select("line").attr("y2",height - y(d.elo))
+        focus.select('rect').attr('stroke',z(team[0].id)).attr('transform','translate('+ d3.max([d3.min([w-xText-130,0]),50-xText])+','+d3.max([80-yText,0])+')');
+    }
+  
+     
+});
+
+/*function handleMouseOver(d, i) {  // Add interactivity
+
+            // Use D3 to select element, change color and size
+            d3.select(this).style("opacity", 1).style("stroke-width", 3).style("stroke", function(d) { return z(d.id); });
+
+            // Specify where to put label of text
+            svg.append("text").attr('id', "t" + d.id + "-" + i)  // Create an id for text so we can select it later for removing on mouseout
+                .attr(x, function() { return x(d.value.date) - 30; })
+                .attr(y, function() { return y(d.value.elo) - 15; })
+            .text('team')
+          }
+          
+function handleMouseOut(d, i) {
+            // Use D3 to select element, change color back to normal
+            d3.select(this).style("stroke-width", 1.5).style("opacity",0.3).style("stroke", function(d) { return z(d.id); })//.style("stroke","grey");
+
+            // Select text by id and then remove
+            d3.select("#t" + d.x + "-" + d.y + "-" + i).remove();  // Remove text location
+          }*/
+
+function type(d, _, columns) {
+  d.date = parseTime(d.date);
+  for (var i = 1, n = columns.length, c; i < n; ++i) d[c = columns[i]] = +d[c];
+  return d;
+}
+
+    // Dicontinuities
+
+    function beforeYear(date) {
+    threshold = new Date();
+    threshold.setFullYear(this,7,1);
+    return date < threshold ;
+    }
+    
+    function afterYear(date) {
+    threshold = new Date();
+    threshold.setFullYear(this,7,1);
+    return date > threshold ;
+    }
+    
+   
+    var disconts = []
+    for (let i=0; i<30; i++){
+     var start = new Date(),end = new Date();
+            start.setFullYear(1995+i, 5, 14);
+            end.setFullYear(1995+i, 7, 14);
+            disconts.push([start,end]);
+            }
+     
+     var x = fc.scaleDiscontinuous(d3.scaleTime()).discontinuityProvider(fc.discontinuityRange.apply(null,disconts))
+    .range([0,width]);
+</script>
+</body>
+</html>
