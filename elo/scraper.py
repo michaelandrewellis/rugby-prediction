@@ -8,7 +8,7 @@ import time
 from selenium import webdriver
 
 
-output_file = 'premiership_data.csv'
+output_file = 'premiership_data_test.csv'
 # set url for Aviva Premiership data
 url = "http://www.premiershiprugby.com/aviva-premiership-rugby-results/"
 
@@ -30,13 +30,11 @@ year_code_dict = {}
 for year,code in zip(years,codes):
     year_code_dict[year] = code
     
-print(year_code_dict)
-print(soup.findAll('select'))
+
 prefix = soup.findAll('select')[0]['id'][0:-2]
   
 for year in years.__reversed__():
     code = year_code_dict[year]
-    print(prefix + ' ' + prefix +'-'+ code)
     table = soup.findAll('table', {"class":prefix + ' ' + prefix +'-'+ code + ' sortable'})[0]
     df_new = pd.read_html(str(table), skiprows=1)[0].ix[:,0:6]
     df_new.columns = ['Data', 'Time', 'Home', 'Score', 'Away', 'Venue']
@@ -46,7 +44,6 @@ for year in years.__reversed__():
         df = pd.concat([df,df_new])
     else:
         df = df_new
-    print(df_new.shape,df.shape)
         
 #df = pd.concat([df.ix[:,0:6],df['Season']],axis=1)
 #df.columns = ['Data','Time','Home','Score','Away','Venue','Season']
